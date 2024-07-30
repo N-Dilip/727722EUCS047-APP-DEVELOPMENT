@@ -1,0 +1,60 @@
+/* Dashboard.css */
+.dashboard {
+  padding: 20px;
+  margin-left: 220px; /* Account for sidebar width */
+  transition: padding ease-out 3s, margin-left ease-out 3s;
+}
+
+.dashboard h1 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  transition: font-size ease-out 3s;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap if needed */
+  gap: 20px; /* Adds space between items */
+  margin-bottom: 20px; /* Adds space between rows */
+}
+
+.stat-box {
+  width: calc(33.333% - 20px); /* Adjust width to account for gap */
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: background-color ease-out 3s;
+}
+
+.stat-box:hover {
+  background-color: #bdc3c7;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.stat-box h3 {
+  margin: 0;
+  font-size: 36px;
+  color: #2c3e50;
+  transition: color ease-out 3s, font-size ease-out 3s;
+}
+
+.stat-box p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  color: #7f8c8d;
+  transition: color ease-out 3s, font-size ease-out 3s;
+}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .stat-box {
+    width: calc(50% - 20px); /* Two items per row on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-box {
+    width: 100%; /* One item per row on very small screens */
+  }
+}

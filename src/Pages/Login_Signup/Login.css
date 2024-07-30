@@ -12,6 +12,9 @@
 
 .logsign{
     /* padding-left: 450px; */
+    background: url('./Assets/pic.jpg');  
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
     font-family: "Poppins", sans-serif;
@@ -24,12 +27,12 @@
     position: relative;
     width: 420px;
     height: 570px;
-    /* background: url('./Assets/Fun.jpg') no-repeat; */
-    background: rgb(83, 83, 83);
+    /* background: url('./Assets/Argon.jpg') no-repeat; */
+    /* background: transparent;
     background-size: cover;
-    background-position: center;
+    background-position: center; */
     border: 2px solid rgba(255, 255, 255, .1);
-    backdrop-filter: blur(50px);
+    backdrop-filter: blur(30px);
     box-shadow: 0 0 10px rgba(0, 0, 0, .2);
     border-radius: 30px;
     color: #fff;

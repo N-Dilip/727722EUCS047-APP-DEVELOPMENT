@@ -1,74 +1,72 @@
 import React from 'react';
 import './Courses.css';
 import { Card } from 'react-bootstrap';
-import ArtCourseImg from '../../Utils/Images/art-course.jpg';
-import BusinessCourseImg from '../../Utils/Images/business-course.jpg';
+import EEE from '../../Utils/Images/EEE.jpg';
+import ECE from '../../Utils/Images/ECE.jpg';
+import Mech from '../../Utils/Images/Mech.jpg';
+import MCT from '../../Utils/Images/MCT.jpg';
+import AIDS from '../../Utils/Images/AIDS.jpg';
+import IT from '../../Utils/Images/IT.jpg';
 import ComputerScienceCourseImg from '../../Utils/Images/computer-science-course.jpg';
 import EducationCourseImg from '../../Utils/Images/education-course.jpg';
-// import HealthcareCourseImg from '../../Utils/Images/healthcare-course.jpg';
-// import LawCourseImg from '../../Utils/Images/law-course.jpg';
-// import MusicCourseImg from '../../Utils/Images/music-course.jpg';
-// import SportCourseImg from '../../Utils/Images/sport-course.jpg';
 import FaqAccordion from '../../Components/FaqAccordion/FaqAccordion';
+import NavbarHome from '../Navbar/Navbar';
 
 const courses = [
   {
       id: 1,
-      img: [ArtCourseImg],
-      title: 'Art Course',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam odio eos distinctio ducimus! Modi quaerat dolores illo accusamus maxime cupiditate culpa minus animi repellat autem!'
+      img: [EEE],
+      title: 'B.E. Electrical and Electronics Engineering',
   },
   {
       id: 2,
-      img: [BusinessCourseImg],
-      title: 'Business Course',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam odio eos distinctio ducimus! Modi quaerat dolores illo accusamus maxime cupiditate culpa minus animi repellat autem!'
+      img: [ECE],
+      title: 'B.E. Electronics and Communications Engineering',
   },
   {
       id: 3,
       img: [ComputerScienceCourseImg],
-      title: 'Computer Science Course',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam odio eos distinctio ducimus! Modi quaerat dolores illo accusamus maxime cupiditate culpa minus animi repellat autem!'
+      title: 'B.E. Computer Science and Engineering',
   },
   {
       id: 4,
       img: [EducationCourseImg],
-      title: 'Education Course',
-      description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam odio eos distinctio ducimus! Modi quaerat dolores illo accusamus maxime cupiditate culpa minus animi repellat autem!'
+      title: 'B.E. Civil Engineering',
   },
-//   {
-//       id: 5,
-//       img: [HealthcareCourseImg],
-//       title: 'Healthcare Course',
-//       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam odio eos distinctio ducimus! Modi quaerat dolores illo accusamus maxime cupiditate culpa minus animi repellat autem!'
-//   },
-//   {
-//       id: 6,
-//       img: [LawCourseImg],
-//       title: 'Law Course',
-//       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam odio eos distinctio ducimus! Modi quaerat dolores illo accusamus maxime cupiditate culpa minus animi repellat autem!'
-//   },
-//   {
-//       id: 7,
-//       img: [MusicCourseImg],
-//       title: 'Music Course',
-//       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam odio eos distinctio ducimus! Modi quaerat dolores illo accusamus maxime cupiditate culpa minus animi repellat autem!'
-//   },
-//   {
-//       id: 8,
-//       img: [SportCourseImg],
-//       title: 'Sport Course',
-//       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam odio eos distinctio ducimus! Modi quaerat dolores illo accusamus maxime cupiditate culpa minus animi repellat autem!'
-//   },
+  {
+      id: 5,
+      img: [Mech],
+      title: 'B.E. Mechanical Engineering',
+  },
+  {
+      id: 6,
+      img: [MCT],
+      title: 'B.E. Mechatronics Engineering',
+  },
+  {
+      id: 7,
+      img: [AIDS],
+      title: 'B.Tech. Artificial Intelligence And Data Science',
+  },
+  {
+      id: 8,
+      img: [IT],
+      title: 'B.Tech. Information Technology',
+  },
 ];
 
 function Courses() {
   return (
     <div className='courses-page'>
-        <header className='height-75'>
+        <NavbarHome />
+        <header className='height-25'>
             <div className='container h-100 d-flex flex-column align-items-center justify-content-center text-light'>
                 <h1 className='text-center fw-semibold'>Our Courses</h1>
-                <p className='text-center w-75 mb-5'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam odio eos distinctio ducimus! Modi quaerat dolores illo accusamus maxime cupiditate culpa minus animi repellat autem!</p>
+                <p className='text-center w-75 mb-5'>At our university, we pride ourselves on offering a 
+                    broad spectrum of courses designed to meet the diverse interests and career aspirations 
+                    of our students. Whether you’re pursuing an undergraduate degree, looking to advance your 
+                    career with postgraduate studies, or seeking professional development opportunities, our 
+                    comprehensive programs provide the foundation and expertise you need to succeed.</p>
             </div>
         </header>
 
@@ -76,11 +74,10 @@ function Courses() {
             <div className='row g-4'>
                 {courses.map((course) => (
                     <div key={course.id} className='col-lg-6'>
-                        <Card className='text-white shadow scale-hover-effect'>
+                        <Card className='shadow scale-hover-effect'>
                             <Card.Img src={course.img} />
                             <Card.ImgOverlay className='d-flex flex-column align-items-center justify-content-center p-md-5'>
-                                <Card.Title className='fs-1 text-danger'>{course.title}</Card.Title>
-                                <Card.Text className='text-center'>{course.description}</Card.Text>
+                                <Card.Title className='fs-1 text-white'>{course.title}</Card.Title>
                             </Card.ImgOverlay>
                         </Card>
                     </div>

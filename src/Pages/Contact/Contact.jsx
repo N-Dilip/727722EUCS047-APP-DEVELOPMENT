@@ -7,11 +7,13 @@ import Button from 'react-bootstrap/Button';
 import LondonLocationImg from '../../Utils/Images/London-location.jpg';
 import ManchesterLocationImg from '../../Utils/Images/Manchester-location.jpg';
 import LiverpoolLocationImg from '../../Utils/Images/Liverpool-location.jpg';
+import NavbarHome from '../Navbar/Navbar';
 
 
 function Contact() {
   return (
     <div className='contact-page'>
+        <NavbarHome />
         <header className='height-75'>
             <div className='container h-100 d-flex flex-column align-items-center justify-content-center text-light'>
                 <h1 className='text-center fw-semibold'>Get In Touch</h1>

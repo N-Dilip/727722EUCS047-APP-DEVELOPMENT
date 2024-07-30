@@ -12,6 +12,7 @@ import Person6 from '../../Utils/Images/person6.jpg';
 import Person7 from '../../Utils/Images/person7.jpg';
 import Person8 from '../../Utils/Images/person8.jpg';
 import Person9 from '../../Utils/Images/person9.jpg';
+import NavbarHome from '../Navbar/Navbar';
 
 const persons = [
   {
@@ -55,6 +56,7 @@ const persons = [
 function About() {
   return (
     <div className='about-page'>
+        <NavbarHome />
         <header className='height-75'>
             <div className='container h-100 d-flex flex-column align-items-center justify-content-center text-light'>
                 <h1 className='text-center fw-semibold'>About Us</h1>
