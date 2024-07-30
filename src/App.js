@@ -11,7 +11,6 @@ import Courses from './Pages/Courses/Courses';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login_Signup/LoginForm';
 import { ToastContainer } from 'react-toastify';
-import Slidebar from './Admin_Page/Slidebar';
 import Dashboard from './Admin_Page/Dashboard';
 import StudentList from './Admin_Page/StudentList'
 import Admission from './Admin_Page/AdmissionForm';
