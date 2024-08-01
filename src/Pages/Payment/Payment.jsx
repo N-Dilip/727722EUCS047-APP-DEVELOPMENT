@@ -1,43 +1,66 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import './Payment.css'
+import Card from './Card2.json'
+import Successfull from './Successfull.json'
+import Lottie from 'lottie-react'
 
 const PaymentPage = () => {
     const [paymentData, setPaymentData] = useState({
+        fullName: '',
         cardNumber: '',
         expiryDate: '',
         cvv: '',
         amount: '',
-        fullName: '',
         paymentMethod: 'card', // Default payment method
     });
 
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [showSuccess, setShowSuccess] = useState(false);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
         setPaymentData({ ...paymentData, [name]: value });
     };
-
+    const navigate = useNavigate();
     const handleSubmit = async (e) => {
         e.preventDefault();
         setIsSubmitting(true);
        
-        await new Promise(resolve => setTimeout(resolve, 2000));
+        await new Promise(resolve => setTimeout(resolve, 300));
         console.log(paymentData);
         setIsSubmitting(false);
+
+        setShowSuccess(true);
+        setTimeout(() => {
+            navigate('/receipt', {
+                state: { cardHolderName: paymentData.fullName, amount: paymentData.amount }
+            }
+
+            );
+        }, 1350);
+
     };
 
     return (
-        <div className="container">
-            <h1 className="text-center my-4 h1-ubuntu">Payment Page</h1>
+        <div className={`pay-container ${showSuccess ? 'dim-background' : ''}`}>
+            <div>
+            <Lottie
+                animationData={Card}
+                loop={true}
+                style={{ width: "600px", height: "600px"}}/>
+            </div>
+            <div className="payment-container">
+            <h1 className="text-center my-3 h1-ubuntu">Payment Page</h1>
             <div className="payment-box">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
-                        <label htmlFor="fullName" className="form-label">Full Name</label>
-                        <input type="text" className="form-control" id="fullName" name="fullName" value={paymentData.fullName} onChange={handleChange} required />
+                        <label htmlFor="fullName" className="form-label">Name on Card</label>
+                        <input type="text" className="form-control" id="fullName" name="fullName" value={paymentData.fullName} onChange={handleChange} placeholder="Name" required />
                     </div>
                     <div className="mb-3">
                         <label htmlFor="amount" className="form-label">Amount</label>
-                        <input type="text" className="form-control" id="amount" name="amount" value={paymentData.amount} onChange={handleChange} required />
+                        <input type="text" className="form-control" id="amount" name="amount" value={paymentData.amount} onChange={handleChange} placeholder="0.00" required />
                     </div>
                     <div className="mb-3">
                         <label className="form-label d-block">Payment Method</label>
@@ -58,7 +81,7 @@ const PaymentPage = () => {
                         <>
                             <div className="mb-3">
                                 <label htmlFor="cardNumber" className="form-label">Card Number</label>
-                                <input type="text" className="form-control" id="cardNumber" name="cardNumber" value={paymentData.cardNumber} onChange={handleChange} maxLength={16} required />
+                                <input type="text" className="form-control" id="cardNumber" name="cardNumber" value={paymentData.cardNumber} onChange={handleChange} maxLength={16} placeholder="1234 5678 9123 4567" required />
                             </div>
                             <div className="row mb-3">
                                 <div className="col">
@@ -67,21 +90,37 @@ const PaymentPage = () => {
                                 </div>
                                 <div className="col">
                                     <label htmlFor="cvv" className="form-label">CVV</label>
-                                    <input type="text" className="form-control" id="cvv" name="cvv" value={paymentData.cvv} onChange={handleChange} maxLength={3} required />
+                                    <input type="text" className="form-control" id="cvv" name="cvv" value={paymentData.cvv} onChange={handleChange} maxLength={3} placeholder="123" required />
                                 </div>
                             </div>
                         </>
                     )}
+                    {paymentData.paymentMethod === 'cod' && (
+                            <div className="mb-3">
+                                <label htmlFor="upiId" className="form-label">UPI ID</label>
+                                <input type="text" className="form-control" id="upiId" name="upiId" value={paymentData.upiId} onChange={handleChange} placeholder="example@upi" required />
+                            </div>
+                        )}
                     <center>
-                        <button type="submit" className="btn btn-primary position-relative" style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                            Proceed to Pay
-                            {isSubmitting && (
-                                <img src="https://cdn.dribbble.com/users/1751799/screenshots/5512482/check02.gif" alt="Loading" style={{ width: '600px', height: '600px', position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }} />
-                            )}
+                        <button
+                        type="submit"
+                        className="btn btn-primary"
+                        disabled={isSubmitting}
+                        // style={{ position: 'relative', display: 'flex', justifyContent: 'center', alignItems: 'center' }}
+                        >Proceed to Pay
                         </button>
                     </center>
                 </form>
             </div>
+            </div>
+            {showSuccess && (
+                <div className="success-overlay">
+                    <Lottie
+                        animationData={Successfull}
+                        style={{ width: "800px", height: "800px" }}
+                    />
+                </div>
+            )}
         </div>
     );
 };

@@ -1,26 +1,30 @@
-Container
-.container {
-    margin-top: 50px;
-    padding: 20px;
-    border: 1px solid #ddd;
+
+.admission-container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.adpage{
+    background: white;
+    padding: 2rem;
     border-radius: 10px;
-    background-color: #f9f9f9;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
 }
 
-/* Form Heading */
+
 h1 {
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Labels */
+
 .form-label {
     font-weight: bold;
     color: #555;
 }
 
-/* Inputs */
+
 .form-control {
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -30,7 +34,7 @@ h1 {
     font-size: 16px;
 }
 
-/* Submit Button */
+
 .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
@@ -45,7 +49,7 @@ h1 {
     border-color: #004085;
 }
 
-/* Success Message */
+
 .text-center {
     text-align: center;
     margin-top: 20px;
@@ -63,7 +67,6 @@ img {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Adjustments */
 @media (max-width: 767px) {
     .container {
         margin-top: 20px;

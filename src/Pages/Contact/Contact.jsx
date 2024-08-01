@@ -12,6 +12,8 @@ import NavbarHome from '../Navbar/Navbar';
 
 function Contact() {
   return (
+
+
     <div className='contact-page'>
         <NavbarHome />
         <header className='height-75'>

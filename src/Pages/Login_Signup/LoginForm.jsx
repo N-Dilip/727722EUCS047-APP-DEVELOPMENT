@@ -91,6 +91,29 @@ const Login = () => {
       })
       .catch(err => console.log(err)) 
   }
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     try {
+//         const response = await axios.post(`http://localhost:8080/register/post/${email}/${password}`);
+//         console.log(response.data);
+//         if (response.data === true) {
+//             const response2 = await axios.get(`http://localhost:8080/register/get/${email}/${password}`);
+//             setDistrictId(response2.data.districtId);
+//             setIsAdminLoggedIn(true);
+//             setMessage('Login successful');
+//             setTimeout(() => {
+//                 navigate("/home");
+//             }, 0);
+//         } else {
+//             setMessage('Invalid email or password. Please try again.');
+//             setTimeout(() => {
+//                 setMessage('');
+//             }, 2500);
+//         }
+//     } catch (error) {
+//         console.error('Error:', error);
+//     }
+// };
 
   return (
       <div className='logsign d-flex flex-column justify-content-center'>
@@ -169,5 +192,4 @@ const Login = () => {
     
   );
 };
-
 export default Login;

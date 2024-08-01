@@ -1,6 +1,14 @@
 import React from 'react'
+import './Fees.css';
+import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router-dom';
 
 const Fees = () => {
+    const navigate=useNavigate();
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        navigate('/payments')
+    }
     document.title="Admission Fees";
     return (
         <div className='container h2-ubuntu'>
@@ -34,6 +42,9 @@ const Fees = () => {
                     </tr>
                 </tbody>
             </table>
+            <div className='pay'>
+                <Button variant="danger btn-lg" type='submit' onClick={handleSubmit}>Pay</Button>
+            </div>
         </div>
     )
 }

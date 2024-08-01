@@ -11,6 +11,8 @@ import ComputerScienceCourseImg from '../../Utils/Images/computer-science-course
 import EducationCourseImg from '../../Utils/Images/education-course.jpg';
 import FaqAccordion from '../../Components/FaqAccordion/FaqAccordion';
 import NavbarHome from '../Navbar/Navbar';
+import { useNavigate } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 const courses = [
   {
@@ -56,6 +58,11 @@ const courses = [
 ];
 
 function Courses() {
+    const navigate=useNavigate();
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        navigate('/admissionform')
+    }
   return (
     <div className='courses-page'>
         <NavbarHome />
@@ -75,9 +82,10 @@ function Courses() {
                 {courses.map((course) => (
                     <div key={course.id} className='col-lg-6'>
                         <Card className='shadow scale-hover-effect'>
-                            <Card.Img src={course.img} />
+                            <Card.Img src={course.img} className='img'/>
                             <Card.ImgOverlay className='d-flex flex-column align-items-center justify-content-center p-md-5'>
                                 <Card.Title className='fs-1 text-white'>{course.title}</Card.Title>
+                                <Button className='btn' variant="danger btn-lg" type='submit' onClick={handleSubmit}>Join Now</Button>
                             </Card.ImgOverlay>
                         </Card>
                     </div>
