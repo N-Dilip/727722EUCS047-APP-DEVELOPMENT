@@ -25,7 +25,7 @@ export default function OpeningPage() {
                 </div>
             </div>
             <footer className='OpeningPage-footer'>
-                <p>© 2024 Book Sphere Library. All rights reserved.</p>
+                <p>© 2024 Harvard University. All rights reserved.</p>
                 <div className='OpeningPage-social-links'>
                     <a href='https://www.facebook.com/' className='OpeningPage-social-link' target='_blank' rel='noopener noreferrer'>
                         <i className='fab fa-facebook'></i>
